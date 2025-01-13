@@ -1,40 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: Gilroy;
+    font-family: Gilroy, sans-serif;
     box-sizing: border-box;
 }
 
-html,body{
+html, body {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
-#main{
+#main {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
-#left{
+#left {
     position: relative;
     width: 40%;
     height: 100%;
 }
 
-#lnav{
+#lnav {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 20px 30px;
 }
 
-#lnavr{
+#lnavr {
     display: flex;
-    align-items: center ;
+    align-items: center;
 }
 
-#lnavr a{
+#lnavr a {
     margin-right: 20px;
     text-decoration: none;
     color: black;
@@ -42,89 +44,130 @@ html,body{
     font-size: 14px;
 }
 
-#lnavr i{
+#lnavr i {
     color: royalblue;
 }
 
-#left #textcenter{
+#left #textcenter {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 20px;
 }
 
-#textcenter h1{
-    font-size: 40px;
+#textcenter h1 {
+    font-size: 2.5rem;
     font-weight: 900;
 }
 
-#textcenter p{
-    opacity: .7;
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+#textcenter p {
+    opacity: 0.7;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 20px 0;
 }
 
-#textcenter a{
+#textcenter a {
     text-decoration: none;
     color: rgb(66, 2, 2);
     border-bottom: 1px solid #000;
     padding-bottom: 4px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 600;
 }
 
-#right{
+#right {
     width: 60%;
     height: 100%;
     background-color: rgb(255, 255, 255);
 }
 
-#rtop{
+#rtop {
     display: flex;
     width: 100%;
     height: 50%;
     background-color: rosybrown;
 }
 
-#rbottom{
+#rbottom {
     width: 100%;
     height: 50%;
-    background-color: rgb(38, 2, 2);
-    background-image: url(https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--6e6305af-9fcb-4979-a0df-94666eada2ac/_1_COPAS_DE_EUROPA_DECIMOQUINTA_SALA_DE_JUNTAS_2PC9815.app.webp?preferwebp=true);
-    background-position: center;  
-    background-size: cover;  
-}
-
-#rtopleft{
-    width: 50%;
-    height: 100%;
-    background-image: url(https://static.vecteezy.com/system/resources/previews/008/252/911/non_2x/madrid-logo-football-club-crest-emblem-on-a-black-and-gold-background-free-vector.jpg);
-    background-position: center ;
-    background-size: cover;
-    
-}
-
-#rtopright{
-    width: 50%;
-    height: 100%;
-    background-color: #5eceda;
-    background-image: url(https://pbs.twimg.com/media/GIAJ38pW8AAJoXy.jpg:large);
+    background: rgb(38, 2, 2) url(https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--6e6305af-9fcb-4979-a0df-94666eada2ac/_1_COPAS_DE_EUROPA_DECIMOQUINTA_SALA_DE_JUNTAS_2PC9815.app.webp?preferwebp=true);
     background-position: center;
     background-size: cover;
 }
 
-@media(max-width: 200px){
-    main{
+#rtopleft {
+    width: 50%;
+    height: 100%;
+    background: url(https://static.vecteezy.com/system/resources/previews/008/252/911/non_2x/madrid-logo-football-club-crest-emblem-on-a-black-and-gold-background-free-vector.jpg) center/cover no-repeat;
+}
+
+#rtopright {
+    width: 50%;
+    height: 100%;
+    background: url(https://pbs.twimg.com/media/GIAJ38pW8AAJoXy.jpg:large) center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+    #main {
         flex-direction: column;
     }
 
-    #main #left{
+    #left, #right {
         width: 100%;
+        height: 50%;
     }
-    
-    #main #right{
+
+    #lnav {
+        padding: 15px 20px;
+    }
+
+    #textcenter h1 {
+        font-size: 2rem;
+    }
+
+    #textcenter p {
+        font-size: 0.9rem;
+    }
+
+    #textcenter a {
+        font-size: 0.9rem;
+    }
+
+    #rtop, #rbottom {
+        height: 50%;
+    }
+
+    /* Stack rtopleft and rtopright vertically */
+    #rtop {
+        flex-direction: column;
+    }
+
+    #rtopleft, #rtopright {
         width: 100%;
+        height: 50%;
     }
-} 
+}
+
+@media (max-width: 480px) {
+    #lnavr a {
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    #textcenter h1 {
+        font-size: 1.8rem;
+    }
+
+    #textcenter p {
+        font-size: 0.8rem;
+    }
+
+    #textcenter a {
+        font-size: 0.8rem;
+    }
+}
+
